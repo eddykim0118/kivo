@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Sales Forecasting Application"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Sales Forecasting</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="tiktok-developers-site-verification" content="RKuyHI6Iq45Aw2PszVV5brPCG8CaGJ7w">
+    <title>Kivo - TikTok Analytics & Sales Forecasting</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'spin-slow': 'spin 3s linear infinite',
-            }
-          }
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">Kivo Analytics</h1>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- TikTok API Service -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">TikTok Analytics API</h2>
+                <p class="text-gray-600 mb-4">Professional TikTok Business account analytics and reporting services.</p>
+                <div class="space-y-2">
+                    <a href="verification/privacy.html" class="block text-blue-600 hover:underline">Privacy Policy</a>
+                    <a href="verification/terms.html" class="block text-blue-600 hover:underline">Terms of Service</a>
+                    <a href="verification/callback.html" class="block text-blue-600 hover:underline">OAuth Callback</a>
+                </div>
+            </div>
+
+            <!-- Sales Forecasting App -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">Sales Forecasting App</h2>
+                <p class="text-gray-600 mb-4">Advanced sales forecasting and analytics dashboard.</p>
+                <a href="frontend/" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
 </html> 
