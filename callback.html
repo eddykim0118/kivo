@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization Complete</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Authorization Complete</h1>
+    <p>Thank you for authorizing our TikTok Analytics Service.</p>
+    <p>You can now close this window.</p>
+    <script>
+        // This page will receive the authorization code from TikTok
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if (code) {
+            console.log('Authorization code:', code);
+            // In a real app, you'd send this code to your server
+        }
+    </script>
+</body>
+</html>
