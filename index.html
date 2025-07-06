@@ -79,19 +79,15 @@
 
     <script>
         function launchApp() {
-            // Check if we're in development or production
             const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
             const isGitHubPages = window.location.hostname === 'eddykim0118.github.io';
             
             if (isDevelopment) {
-                // Redirect to the React development server
-                window.location.href = 'http://localhost:3000/kivo';
+                window.location.href = 'http://localhost:3000/kivo/dashboard';
             } else if (isGitHubPages) {
-                // Redirect to the deployed GitHub Pages site
-                window.location.href = 'https://eddykim0118.github.io/kivo/';
+                window.location.href = 'https://eddykim0118.github.io/kivo/dashboard';
             } else {
-                // Fallback to GitHub Pages
-                window.location.href = 'https://eddykim0118.github.io/kivo/';
+                window.location.href = 'https://eddykim0118.github.io/kivo/dashboard';
             }
         }
 
