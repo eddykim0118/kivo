@@ -1,99 +1,177 @@
-# Sales Forecasting Web Application
+# KIVO AI - Business Intelligence Platform
 
-A modern web application for sales forecasting using machine learning models.
+A comprehensive business forecasting and analytics platform with AI-powered insights, multi-platform marketing optimization, and intelligent chat assistance.
 
-## Features
+## 🚀 Features
 
-- Interactive dashboard with real-time metrics
-- Multiple model support (XGBoost, LSTM, Prophet)
-- Data upload and configuration
-- Detailed performance analysis
-- Beautiful and responsive UI
+- **Sales Forecasting**: AI-powered sales predictions and analytics
+- **Marketing Insights**: Multi-platform marketing optimization (Google, Meta, TikTok, Yelp)
+- **AI Assistant**: Interactive business intelligence chat
+- **Data Upload**: Easy CSV/Excel data import
+- **Workflow Demo**: Complete end-to-end demonstration
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React 18
-- Tailwind CSS
-- Recharts for data visualization
-- Axios for API communication
-- Lucide React for icons
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **Deployment**: GitHub Pages
 
-## Installation
+## 📦 Installation
 
-1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd sales-forecasting-app
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Create a `.env` file in the root directory:
-```env
-REACT_APP_API_URL=http://localhost:8000/api
-REACT_APP_VERSION=1.0.0
-```
-
-4. Start the development server:
-```bash
+# Start development server
 npm start
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
-## Project Structure
+## 🚀 Deployment
+
+### Option 1: GitHub Pages (Recommended)
+
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages**:
+   ```bash
+   npm run deploy
+   ```
+
+3. **Access your app**:
+   - Visit: https://eddykim0118.github.io/kivo/
+   - The landing page will automatically redirect to the dashboard
+
+### Option 2: Manual Deployment
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Upload the `build` folder contents to your web server
+
+## 📱 User Flow
+
+1. **Landing Page** (`/`): Professional landing page with feature overview
+2. **Dashboard** (`/dashboard`): Main analytics dashboard
+3. **Data Upload** (`/upload`): Upload CSV/Excel files for analysis
+4. **Sales Predictions** (`/sales`): AI-powered sales forecasting
+5. **Marketing Predictions** (`/marketing`): Multi-platform marketing insights
+6. **Chat System** (`/chat`): AI assistant for business queries
+7. **Workflow Demo** (`/demo`): Complete end-to-end demonstration
+
+## 🎯 Platform Integrations
+
+- **Google Ads**: Search and display advertising analytics
+- **Meta Ads**: Facebook and Instagram advertising insights
+- **TikTok Ads**: Video advertising performance metrics
+- **Yelp Ads**: Local business advertising optimization
+
+## 🔧 Development
+
+### Project Structure
 
 ```
-frontend/
-├── public/
-│   ├── index.html
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Dashboard.js
-│   │   ├── DataUpload.js
-│   │   ├── ModelConfig.js
-│   │   ├── Results.js
-│   │   ├── Navigation.js
-│   │   └── Charts/
-│   │       ├── ForecastChart.js
-│   │       ├── PerformanceChart.js
-│   │       └── ModelDistribution.js
-│   ├── services/
-│   │   └── api.js
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
+src/
+├── components/          # React components
+│   ├── LandingPage.tsx # Landing page
+│   ├── Dashboard.tsx   # Main dashboard
+│   ├── DataUpload.tsx  # File upload component
+│   ├── SalesPredictions.tsx # Sales forecasting
+│   ├── MarketingPredictions.tsx # Marketing insights
+│   ├── ChatSystem.tsx  # AI chat interface
+│   └── WorkflowDemo.tsx # Complete demo
+├── types/              # TypeScript type definitions
+├── context/            # React context providers
+└── utils/              # Utility functions
 ```
 
-## Development
+### Available Scripts
 
-- `npm start` - Start development server
-- `npm build` - Build for production
-- `npm test` - Run tests
-- `npm eject` - Eject from Create React App
+- `npm start`: Start development server
+- `npm run build`: Build for production
+- `npm run test`: Run tests
+- `npm run lint`: Run ESLint
+- `npm run deploy`: Deploy to GitHub Pages
 
-## API Integration
+## 🌐 Live Demo
 
-The application expects a backend API with the following endpoints:
+Visit the live application at: **https://eddykim0118.github.io/kivo/**
 
-- `POST /api/upload` - Upload CSV data
-- `POST /api/forecast` - Start forecasting process
-- `GET /api/results` - Get forecast results
-- `GET /api/status` - Get forecast status
-- `GET /api/metrics` - Get model metrics
+## 📊 Features Overview
 
-## Contributing
+### Landing Page
+- Professional design with gradient background
+- Feature highlights and platform integrations
+- Call-to-action buttons for dashboard access
+- Auto-redirect after 3 seconds
+
+### Dashboard
+- Overview of key metrics
+- Quick access to all features
+- Real-time data visualization
+- Responsive design
+
+### Sales Predictions
+- AI-powered forecasting models
+- Interactive charts and graphs
+- Product performance analysis
+- Revenue projections
+
+### Marketing Predictions
+- Multi-platform advertising insights
+- ROI analysis and optimization
+- Campaign performance metrics
+- Platform-specific analytics
+
+### Chat System
+- AI-powered business assistant
+- Quick action buttons
+- Realistic conversation flow
+- Context-aware responses
+
+### Workflow Demo
+- Step-by-step demonstration
+- Play/pause controls
+- Progress indicators
+- Complete user journey
+
+## 🔒 Security
+
+- All data is processed client-side
+- No sensitive information stored
+- Mock data for demonstration purposes
+- Secure deployment via GitHub Pages
+
+## 📈 Performance
+
+- Optimized React components
+- Lazy loading for better performance
+- Responsive design for all devices
+- Fast loading times
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License.
+
+---
+
+**KIVO AI** - Transforming business intelligence with AI-powered analytics 

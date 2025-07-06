@@ -1,4 +1,16 @@
 {
+  "name": "kivo-ai-platform",
+  "version": "1.0.0",
+  "description": "KIVO AI - Business Intelligence Platform",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "deploy": "cd frontend && npm run deploy",
+    "install-deps": "cd frontend && npm install"
+  },
+  "keywords": ["ai", "analytics", "business-intelligence", "forecasting"],
+  "author": "KIVO AI",
+  "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.50.1"
   }
