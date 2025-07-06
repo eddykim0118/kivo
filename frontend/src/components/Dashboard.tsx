@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, MessageCircle, Play, ArrowRight, Users, DollarSign, ShoppingCart, Sparkles, Zap, Star, Youtube, Facebook, MapPin } from 'lucide-react';
+import { TrendingUp, BarChart3, Target, MessageCircle, Play, ArrowRight, Users, DollarSign, ShoppingCart, Sparkles, Zap, Star } from 'lucide-react';
 import { ROUTES } from '../types/routes';
 
 const Dashboard: React.FC = () => {
@@ -201,75 +201,9 @@ const Dashboard: React.FC = () => {
               {feature.icon}
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-            <p className="text-sm text-gray-600">{feature.description}</p>
+            <p className="text-gray-600">{feature.description}</p>
           </div>
         ))}
-      </div>
-
-      {/* Platform Integration */}
-      <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-8">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Multi-Platform Integration</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Youtube className="w-6 h-6 text-red-600" />
-            </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Google Ads</h4>
-            <p className="text-sm text-gray-600">Search & Display</p>
-          </div>
-          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Facebook className="w-6 h-6 text-blue-600" />
-            </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Meta Ads</h4>
-            <p className="text-sm text-gray-600">Social & Stories</p>
-          </div>
-          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Play className="w-6 h-6 text-pink-600" />
-            </div>
-            <h4 className="font-semibold text-gray-900 mb-2">TikTok Ads</h4>
-            <p className="text-sm text-gray-600">Video & Trends</p>
-          </div>
-          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MapPin className="w-6 h-6 text-red-600" />
-            </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Yelp Ads</h4>
-            <p className="text-sm text-gray-600">Local & Reviews</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Recent Activity */}
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Recent Activity</h3>
-        <div className="space-y-4">
-          <div className="flex items-center space-x-4 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <div className="flex-1">
-              <p className="text-sm font-medium text-gray-900">Sales data uploaded successfully</p>
-              <p className="text-xs text-gray-500">2 minutes ago</p>
-            </div>
-            <TrendingUp className="w-4 h-4 text-green-600" />
-          </div>
-          <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <div className="flex-1">
-              <p className="text-sm font-medium text-gray-900">Marketing predictions generated</p>
-              <p className="text-xs text-gray-500">5 minutes ago</p>
-            </div>
-            <Target className="w-4 h-4 text-blue-600" />
-          </div>
-          <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
-            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-            <div className="flex-1">
-              <p className="text-sm font-medium text-gray-900">AI chat session started</p>
-              <p className="text-xs text-gray-500">10 minutes ago</p>
-            </div>
-            <MessageCircle className="w-4 h-4 text-purple-600" />
-          </div>
-        </div>
       </div>
     </div>
   );
