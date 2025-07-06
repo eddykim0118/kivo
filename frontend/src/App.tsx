@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
@@ -16,25 +16,23 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          {/* Landing Page - Default Route */}
-          <Route path="/" element={<LandingPage />} />
-          
-          {/* Dashboard and Main App Routes */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/upload" element={<DataUpload onDataUpload={handleDataUpload} />} />
-          <Route path="/sales" element={<SalesPredictions />} />
-          <Route path="/marketing" element={<MarketingPredictions />} />
-          <Route path="/chat" element={<ChatSystem />} />
-          <Route path="/demo" element={<WorkflowDemo />} />
-          
-          {/* Redirect any unknown routes to landing page */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        {/* Landing Page - Default Route */}
+        <Route path="/" element={<LandingPage />} />
+        
+        {/* Dashboard and Main App Routes */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/upload" element={<DataUpload onDataUpload={handleDataUpload} />} />
+        <Route path="/sales" element={<SalesPredictions />} />
+        <Route path="/marketing" element={<MarketingPredictions />} />
+        <Route path="/chat" element={<ChatSystem />} />
+        <Route path="/demo" element={<WorkflowDemo />} />
+        
+        {/* Redirect any unknown routes to landing page */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
   );
 }
 
