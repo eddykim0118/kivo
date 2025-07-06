@@ -16,6 +16,10 @@ export const ROUTES = {
   RESULTS: '/results',
   DASHBOARD: '/dashboard',
   MENU_PREDICTIONS: '/menu-predictions',
+  WORKFLOW_DEMO: '/workflow-demo',
+  SALES_PREDICTIONS: '/sales-predictions',
+  MARKETING_PREDICTIONS: '/marketing-predictions',
+  CHAT_SYSTEM: '/chat-system',
 } as const;
 
 export type RouteKey = keyof typeof ROUTES; 

@@ -1,104 +1,276 @@
 import React from 'react';
-import { useAppContext } from '../context/AppContext';
-import { ForecastData, ForecastMetrics } from '../types/api';
-import { LineChart, BarChart2, TrendingUp, AlertCircle } from 'lucide-react';
-
-interface MetricCardProps {
-  title: string;
-  value: number;
-  icon: React.ReactNode;
-  trend?: number;
-}
-
-const MetricCard: React.FC<MetricCardProps> = ({ title, value, icon, trend }) => (
-  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-    <div className="flex items-center justify-between">
-      <div>
-        <p className="text-sm font-medium text-gray-600">{title}</p>
-        <p className="text-2xl font-semibold text-gray-900 mt-1">
-          {value.toFixed(2)}
-        </p>
-      </div>
-      <div className="p-3 bg-blue-50 rounded-full">{icon}</div>
-    </div>
-    {trend !== undefined && (
-      <div className="mt-4 flex items-center">
-        <span
-          className={`text-sm font-medium ${
-            trend >= 0 ? 'text-green-600' : 'text-red-600'
-          }`}
-        >
-          {trend >= 0 ? '+' : ''}{trend.toFixed(1)}%
-        </span>
-        <span className="text-sm text-gray-500 ml-2">vs last period</span>
-      </div>
-    )}
-  </div>
-);
+import { Link } from 'react-router-dom';
+import { TrendingUp, BarChart3, Target, MessageCircle, Play, ArrowRight, Users, DollarSign, ShoppingCart, Sparkles, Zap, Star, Youtube, Facebook, MapPin } from 'lucide-react';
+import { ROUTES } from '../types/routes';
 
 const Dashboard: React.FC = () => {
-  const { state } = useAppContext();
-  const { forecastData, error } = state;
+  const quickActions = [
+    {
+      title: 'Workflow Demo',
+      description: 'See the complete end-to-end workflow',
+      icon: <Play className="w-6 h-6" />,
+      path: ROUTES.WORKFLOW_DEMO,
+      color: 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
+      textColor: 'text-white',
+      gradient: 'from-blue-500 to-blue-600'
+    },
+    {
+      title: 'Sales Predictions',
+      description: 'AI-powered sales forecasting',
+      icon: <TrendingUp className="w-6 h-6" />,
+      path: ROUTES.SALES_PREDICTIONS,
+      color: 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
+      textColor: 'text-white',
+      gradient: 'from-green-500 to-green-600'
+    },
+    {
+      title: 'Marketing Insights',
+      description: 'Multi-platform marketing analysis',
+      icon: <Target className="w-6 h-6" />,
+      path: ROUTES.MARKETING_PREDICTIONS,
+      color: 'bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
+      textColor: 'text-white',
+      gradient: 'from-purple-500 to-purple-600'
+    },
+    {
+      title: 'AI Chat Assistant',
+      description: 'Interactive business insights',
+      icon: <MessageCircle className="w-6 h-6" />,
+      path: ROUTES.CHAT_SYSTEM,
+      color: 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700',
+      textColor: 'text-white',
+      gradient: 'from-orange-500 to-orange-600'
+    }
+  ];
 
-  // Calculate metrics from forecast data
-  const metrics: ForecastMetrics = {
-    mae: 0,
-    mse: 0,
-    rmse: 0,
-    r2: 0,
-  };
+  const stats = [
+    { label: 'Total Sales', value: '$285,000', change: '+15%', icon: <DollarSign className="w-5 h-5" />, color: 'text-green-600' },
+    { label: 'Active Users', value: '1,247', change: '+8%', icon: <Users className="w-5 h-5" />, color: 'text-blue-600' },
+    { label: 'Orders', value: '8,934', change: '+12%', icon: <ShoppingCart className="w-5 h-5" />, color: 'text-purple-600' },
+    { label: 'Predictions', value: '94.2%', change: '+2.1%', icon: <BarChart3 className="w-5 h-5" />, color: 'text-orange-600' }
+  ];
 
-  if (forecastData.length > 0) {
-    // Calculate actual metrics here
-    metrics.mae = 15.5;
-    metrics.mse = 240.25;
-    metrics.rmse = 15.5;
-    metrics.r2 = 0.85;
-  }
+  const features = [
+    {
+      title: 'AI-Powered Analytics',
+      description: 'Advanced machine learning algorithms for accurate predictions',
+      icon: <Sparkles className="w-5 h-5" />,
+      color: 'text-blue-600'
+    },
+    {
+      title: 'Multi-Platform Integration',
+      description: 'Seamless connection with Google, Meta, TikTok, and Yelp',
+      icon: <Zap className="w-5 h-5" />,
+      color: 'text-green-600'
+    },
+    {
+      title: 'Real-Time Insights',
+      description: 'Live data updates and instant business recommendations',
+      icon: <Star className="w-5 h-5" />,
+      color: 'text-purple-600'
+    }
+  ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-        <div className="flex items-center space-x-4">
-          <button className="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700">
-            Export Data
-          </button>
-          <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700">
-            New Forecast
-          </button>
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-lg shadow-lg p-8 text-white">
+        <div className="flex items-center justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center space-x-2 mb-4">
+              <Sparkles className="w-8 h-8 text-yellow-300" />
+              <h1 className="text-4xl font-bold">Welcome to KIVO AI</h1>
+            </div>
+            <p className="text-xl text-blue-100 mb-6">
+              Your intelligent business forecasting platform powered by advanced AI
+            </p>
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                <TrendingUp className="w-5 h-5" />
+                <span className="text-sm font-medium">Live Analytics</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                <Target className="w-5 h-5" />
+                <span className="text-sm font-medium">AI Predictions</span>
+              </div>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                <div className="text-3xl font-bold">4</div>
+                <div className="text-sm text-blue-100">Platforms</div>
+              </div>
+              <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                <div className="text-3xl font-bold">AI</div>
+                <div className="text-sm text-blue-100">Powered</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {error && (
-        <div className="flex items-center p-4 bg-red-50 rounded-lg">
-          <AlertCircle className="h-5 w-5 text-red-500" />
-          <span className="ml-2 text-sm text-red-700">{error}</span>
-        </div>
-      )}
-
+      {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <MetricCard
-          title="Mean Absolute Error"
-          value={metrics.mae}
-          icon={<LineChart className="h-6 w-6 text-blue-600" />}
-          trend={-2.5}
-        />
-        <MetricCard
-          title="Root Mean Square Error"
-          value={metrics.rmse}
-          icon={<BarChart2 className="h-6 w-6 text-blue-600" />}
-          trend={-1.8}
-        />
-        <MetricCard
-          title="R-squared Score"
-          value={metrics.r2}
-          icon={<TrendingUp className="h-6 w-6 text-blue-600" />}
-          trend={3.2}
-        />
+        {stats.map((stat, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">{stat.label}</p>
+                <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                <p className={`text-sm ${stat.color} font-medium`}>{stat.change} from last month</p>
+              </div>
+              <div className={`${stat.color} bg-opacity-10 p-3 rounded-full`}>
+                {stat.icon}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* Add more dashboard sections here */}
+      {/* Workflow Demo Prominent Section */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-xl p-8 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div className="relative z-10">
+          <div className="flex items-center justify-between">
+            <div className="max-w-2xl">
+              <div className="flex items-center space-x-3 mb-4">
+                <Play className="w-8 h-8 text-yellow-300" />
+                <h2 className="text-3xl font-bold">Experience the Complete Workflow</h2>
+              </div>
+              <p className="text-indigo-100 mb-6 text-lg">
+                See how KIVO AI transforms your business data into actionable insights. 
+                From sales data upload to AI-powered predictions and marketing optimization.
+              </p>
+              <div className="flex items-center space-x-4">
+                <Link
+                  to={ROUTES.WORKFLOW_DEMO}
+                  className="flex items-center space-x-2 bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                >
+                  <Play className="w-5 h-5" />
+                  <span>Start Demo</span>
+                </Link>
+                <div className="flex items-center space-x-2 text-indigo-100">
+                  <span>Auto-play available</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold">4</div>
+                  <div className="text-sm text-indigo-100">Workflow Steps</div>
+                </div>
+                <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold">AI</div>
+                  <div className="text-sm text-indigo-100">Powered</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Quick Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {quickActions.map((action, index) => (
+            <Link
+              key={index}
+              to={action.path}
+              className={`${action.color} ${action.textColor} rounded-lg p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-xl`}
+            >
+              <div className="flex items-center justify-between mb-4">
+                {action.icon}
+                <ArrowRight className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{action.title}</h3>
+              <p className="text-sm opacity-90">{action.description}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Features Overview */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {features.map((feature, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className={`${feature.color} mb-4`}>
+              {feature.icon}
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+            <p className="text-sm text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Platform Integration */}
+      <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-8">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Multi-Platform Integration</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Youtube className="w-6 h-6 text-red-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Google Ads</h4>
+            <p className="text-sm text-gray-600">Search & Display</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Facebook className="w-6 h-6 text-blue-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Meta Ads</h4>
+            <p className="text-sm text-gray-600">Social & Stories</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Play className="w-6 h-6 text-pink-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">TikTok Ads</h4>
+            <p className="text-sm text-gray-600">Video & Trends</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MapPin className="w-6 h-6 text-red-600" />
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Yelp Ads</h4>
+            <p className="text-sm text-gray-600">Local & Reviews</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Activity */}
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <h3 className="text-xl font-semibold text-gray-900 mb-6">Recent Activity</h3>
+        <div className="space-y-4">
+          <div className="flex items-center space-x-4 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-900">Sales data uploaded successfully</p>
+              <p className="text-xs text-gray-500">2 minutes ago</p>
+            </div>
+            <TrendingUp className="w-4 h-4 text-green-600" />
+          </div>
+          <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-900">Marketing predictions generated</p>
+              <p className="text-xs text-gray-500">5 minutes ago</p>
+            </div>
+            <Target className="w-4 h-4 text-blue-600" />
+          </div>
+          <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-900">AI chat session started</p>
+              <p className="text-xs text-gray-500">10 minutes ago</p>
+            </div>
+            <MessageCircle className="w-4 h-4 text-purple-600" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

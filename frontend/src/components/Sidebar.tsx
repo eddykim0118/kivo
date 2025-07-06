@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Upload, Settings, BarChart2, LineChart, Utensils } from 'lucide-react';
+import { Home, Upload, Settings, BarChart2, LineChart, Utensils, Play, TrendingUp, MessageCircle, Target } from 'lucide-react';
 import { ROUTES } from '../types/routes';
 
 interface SidebarItem {
@@ -11,7 +11,11 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   { path: ROUTES.DASHBOARD, label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
+  { path: ROUTES.WORKFLOW_DEMO, label: 'Workflow Demo', icon: <Play className="w-5 h-5" /> },
   { path: ROUTES.UPLOAD, label: 'Upload Data', icon: <Upload className="w-5 h-5" /> },
+  { path: ROUTES.SALES_PREDICTIONS, label: 'Sales Predictions', icon: <TrendingUp className="w-5 h-5" /> },
+  { path: ROUTES.MARKETING_PREDICTIONS, label: 'Marketing Predictions', icon: <Target className="w-5 h-5" /> },
+  { path: ROUTES.CHAT_SYSTEM, label: 'AI Chat', icon: <MessageCircle className="w-5 h-5" /> },
   { path: ROUTES.MODEL_CONFIG, label: 'Model Config', icon: <Settings className="w-5 h-5" /> },
   { path: ROUTES.RESULTS, label: 'Results', icon: <BarChart2 className="w-5 h-5" /> },
   { path: ROUTES.MENU_PREDICTIONS, label: 'Menu Predictions', icon: <Utensils className="w-5 h-5" /> },

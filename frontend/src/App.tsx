@@ -9,6 +9,10 @@ import DataUpload from './components/DataUpload';
 import ModelConfig from './components/ModelConfig';
 import Results from './components/Results';
 import MenuPredictions from './components/MenuPredictions';
+import WorkflowDemo from './components/WorkflowDemo';
+import SalesPredictions from './components/SalesPredictions';
+import MarketingPredictions from './components/MarketingPredictions';
+import ChatSystem from './components/ChatSystem';
 
 const ProtectedAppContent: React.FC = () => {
   const { state, dispatch } = useAppContext();
@@ -52,6 +56,10 @@ const ProtectedAppContent: React.FC = () => {
             }
           />
           <Route path={ROUTES.MENU_PREDICTIONS} element={<MenuPredictions />} />
+          <Route path={ROUTES.WORKFLOW_DEMO} element={<WorkflowDemo />} />
+          <Route path={ROUTES.SALES_PREDICTIONS} element={<SalesPredictions />} />
+          <Route path={ROUTES.MARKETING_PREDICTIONS} element={<MarketingPredictions />} />
+          <Route path={ROUTES.CHAT_SYSTEM} element={<ChatSystem />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </main>
