@@ -175,7 +175,7 @@ const LandingPage: React.FC = () => {
       {/* Footer */}
       <div className="container mx-auto px-6 py-8">
         <div className="text-center text-blue-100">
-          <p>&copy; 2024 KIVO AI. All rights reserved.</p>
+          <p>&copy; 2025 KIVO AI. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-4 text-sm">
             <a
               href="/kivo/verification/privacy.html"
