@@ -177,30 +177,24 @@ const LandingPage: React.FC = () => {
         <div className="text-center text-blue-100">
           <p>&copy; 2025 KIVO AI. All rights reserved.</p>
           <div className="flex justify-center space-x-6 mt-4 text-sm">
-            <a
-              href="/kivo/verification/privacy.html"
+            <Link
+              to="/verification/privacy"
               className="hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Privacy Policy
-            </a>
-            <a
-              href="/kivo/verification/terms.html"
+            </Link>
+            <Link
+              to="/verification/terms"
               className="hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Terms of Service
-            </a>
-            <a
-              href="/kivo/verification/callback.html"
+            </Link>
+            <Link
+              to="/verification/callback"
               className="hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               OAuth Callback
-            </a>
+            </Link>
           </div>
         </div>
       </div>

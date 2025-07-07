@@ -9,6 +9,9 @@ import SalesPredictions from './components/SalesPredictions';
 import MarketingPredictions from './components/MarketingPredictions';
 import ChatSystem from './components/ChatSystem';
 import WorkflowDemo from './components/WorkflowDemo';
+import Privacy from './components/Privacy';
+import Terms from './components/Terms';
+import Callback from './components/Callback';
 
 function App() {
   const handleDataUpload = (data: any) => {
@@ -53,6 +56,11 @@ function App() {
             <WorkflowDemo />
           </Layout>
         } />
+        
+        {/* Verification Pages */}
+        <Route path="/verification/privacy" element={<Privacy />} />
+        <Route path="/verification/terms" element={<Terms />} />
+        <Route path="/verification/callback" element={<Callback />} />
         
         {/* Redirect any unknown routes to landing page */}
         <Route path="*" element={<Navigate to="/" replace />} />
