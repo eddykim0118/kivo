@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/kivo/static/css/main.db1092aa.css",
-    "main.js": "/kivo/static/js/main.42b0e4fd.js",
+    "main.css": "/kivo/static/css/main.79df4afd.css",
+    "main.js": "/kivo/static/js/main.6f9162c4.js",
     "index.html": "/kivo/index.html",
-    "main.db1092aa.css.map": "/kivo/static/css/main.db1092aa.css.map",
-    "main.42b0e4fd.js.map": "/kivo/static/js/main.42b0e4fd.js.map"
+    "main.79df4afd.css.map": "/kivo/static/css/main.79df4afd.css.map",
+    "main.6f9162c4.js.map": "/kivo/static/js/main.6f9162c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.db1092aa.css",
-    "static/js/main.42b0e4fd.js"
+    "static/css/main.79df4afd.css",
+    "static/js/main.6f9162c4.js"
   ]
 }
