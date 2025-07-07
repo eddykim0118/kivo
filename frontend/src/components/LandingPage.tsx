@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Target, MessageCircle, Play, ArrowRight, Sparkles } from 'lucide-react';
 import { ROUTES } from '../types/routes';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLaunchApp = () => {
     setIsLoading(true);
-    // Simulate loading
     setTimeout(() => {
-      window.location.href = '/dashboard';
+      navigate('/dashboard');
     }, 1000);
   };
 
