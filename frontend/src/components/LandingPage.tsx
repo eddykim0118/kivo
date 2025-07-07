@@ -10,7 +10,7 @@ const LandingPage: React.FC = () => {
     setIsLoading(true);
     // Simulate loading
     setTimeout(() => {
-      window.location.href = '#/dashboard';
+      window.location.href = '/dashboard';
     }, 1000);
   };
 
